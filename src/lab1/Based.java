@@ -6,13 +6,26 @@ a = 2, b = 3;
 c = a + b;
 d = (a * b) / c;
 WHILE(a < 10)
-a = a + 3;
+    a = a + 3;
 PRINTF(a);
-FOR(i = 0, i < 5, i = i + 1)
-PRINT(i);
+e = 1 + ( 10 / ( 17 - (6 * 2) ) );
 IF (c > 3)
-d = (a * b) / c;
+    d = (a * b) / c
+ELSE
+{
+    d = (c * b) / a;
+};
 PRINTF(d);
+
+c = 5;
+IF (c > 3)
+a = 1
+ELSE {
+a = 2;};
+PRINTF(a);
+
+FOR(i = 0, i < 5, i = i + 1)
+PRINTF(i);
 */
 
 public class Based

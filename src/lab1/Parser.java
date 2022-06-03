@@ -127,6 +127,23 @@ public class Parser
         checkError("R_BC");
     }
 
+    public void assign()
+    {
+        checkError("VAR");
+        checkError("ASSIGN_OP");
+        expr_value();
+    }
+
+    public void expr_assign()
+    {
+        assign();
+        while ("DIV".equals(curToken.getType()))
+        {
+            checkError("DIV");
+            assign();
+        }
+    }
+
     //-----------CONDITIONS-----------
     public void condition()
     {
@@ -160,10 +177,12 @@ public class Parser
     public void else_op()
     {
         checkError("ELSE");
+        checkError("L_BRACE");
         do
         {
             expr();
         } while (smthInBody());
+        checkError("R_BRACE");
     }
 
     public void while_op()
@@ -201,23 +220,6 @@ public class Parser
         {
             body();
         } while (smthInBody());
-    }
-
-    public void assign()
-    {
-        checkError("VAR");
-        checkError("ASSIGN_OP");
-        expr_value();
-    }
-
-    public void expr_assign()
-    {
-        assign();
-        while ("DIV".equals(curToken.getType()))
-        {
-            checkError("DIV");
-            assign();
-        }
     }
 
     public void printf()

@@ -59,7 +59,8 @@ public class Interpreter
         for (; iterator < infixExpr.size(); iterator++)
         {
             currentToken = infixExpr.get(iterator);
-            switch (currentToken.getType()) {
+            switch (currentToken.getType())
+            {
                 case "ASSIGN_OP" -> valueTranslate("ENDL");
                 case "IF" -> ifTranslate();
                 case "WHILE" -> whileTranslate();
@@ -199,7 +200,6 @@ public class Interpreter
     {
         int indexVar = iterator - 1;
         int startExpr = iterator + 1;
-
         while (!trans.equals(currentToken.getType()))
         {
             if ("DIV".equals(currentToken.getType()))

@@ -96,8 +96,11 @@ public class Lexer
 
     public void printTokens()
     {
+        int i = 0;
         for (Token token: tokens)
         {
+            i++;
+            System.out.printf("№%d ", i);
             System.out.println(token);
         }
     }
