@@ -9,11 +9,12 @@ WHILE(a < 10)
     a = a + 3;
 PRINTF(a);
 e = 1 + ( 10 / ( 17 - (6 * 2) ) );
+
 IF (c > 3)
-    d = (a * b) / c
+    d = (a * b) / 2
 ELSE
 {
-    d = (c * b) / a;
+    d = (a * b) / c;
 };
 PRINTF(d);
 
@@ -23,6 +24,7 @@ a = 1
 ELSE {
 a = 2;};
 PRINTF(a);
+
 
 FOR(i = 0, i < 5, i = i + 1)
 PRINTF(i);
